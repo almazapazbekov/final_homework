@@ -3,12 +3,12 @@ from rest_framework import generics
 from rest_framework.generics import ListCreateAPIView
 
 from .models import Profile
-from .serializers import IsSenderRegisterSerializer, BuyerRegisterSerializer
+from .serializers import SenderRegisterSerializer, BuyerRegisterSerializer
 
 
-class IsSenderProfileCreateAPIView(generics.CreateAPIView):
+class SenderProfileCreateAPIView(generics.CreateAPIView):
     queryset = Profile.objects.all()
-    serializer_class = IsSenderRegisterSerializer
+    serializer_class = SenderRegisterSerializer
 
 
 class BuyerProfileCreateAPIView(generics.CreateAPIView):

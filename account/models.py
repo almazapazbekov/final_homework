@@ -5,3 +5,5 @@ from django.db import models
 
 class Profile(User):
     is_sender = models.BooleanField()
+
+

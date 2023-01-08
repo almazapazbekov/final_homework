@@ -1,5 +1,5 @@
 from django.db import models
-from account.models import Profile
+from account.models import Profile, User
 
 
 class Category(models.Model):
@@ -13,7 +13,7 @@ class Item(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     name = models.CharField(max_length=128)
     price = models.IntegerField()
-    profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
+    profile = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
         return f'name: {self.name},price: {self.price}, profile: {self.profile}'
